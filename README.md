@@ -35,38 +35,38 @@ Git GitHub
 
 Step 1: Install Git
 
-'''
+```
 sudo apt update  
 sudo apt install git
-'''
+```
 Step 2: Create a GitHub account
 
 Go to https://github.com and sign up.
 
 Step 3: Configure Git with your identity
 
-'''
+```
 git config --global user.name "Your Name"  
 git config --global user.email you@example.com
-'''
+```
 
 Step 4: Generate SSH Key
 This creates a public and private SSH key pair.
-'''
+```
 ssh-keygen -t ed25519 -C "you@example.com"
-'''
+```
 Press Enter to accept the default file location. Then enter a passphrase or leave it blank.
 
 Step 5: Add SSH Key to the SSH Agent
-'''
+```
 eval "$(ssh-agent -s)"  
 ssh-add ~/.ssh/id_ed25519
-'''
+```
 Step 6: Add Your SSH Key to GitHub
 Copy your public key:
-'''
+```
 cat ~/.ssh/id_ed25519.pub
-'''
+```
 Go to GitHub:
 
 Click your profile → Settings → SSH and GPG keys → New SSH key
@@ -74,29 +74,32 @@ Click your profile → Settings → SSH and GPG keys → New SSH key
 Paste the copied key and save.
 
 Step 7: Test SSH Connection with GitHub
-'''
+```
 ssh -T git@github.com
-'''
+```
 Step 8: Create a New Repository on GitHub
 Go to GitHub → New Repository → name it and create.
 
 Step 9: Initialize Git in Your Project Directory
-'''
+
+```
 cd your-project-folder  
 git init
-'''
+```
 Step 10: Link Local Folder to GitHub Using SSH URL
 Get your SSH URL from GitHub (it looks like git@github.com:username/repo.git), then:
-'''
+
+```
 git remote add origin git@github.com:username/repo.git
-'''
+```
 Step 11: Add, Commit, and Push Code
-'''
+
+```
 git add .  
 git commit -m "Initial commit"  
 git branch -M main  
 git push -u origin main
-'''
+```
 
 
 Now your project is securely connected to GitHub using SSH!
